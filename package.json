@@ -1,0 +1,22 @@
+{
+  "name": "testing-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WitherMite/testing-test.git"
+  },
+  "author": "WitherMite",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WitherMite/testing-test/issues"
+  },
+  "homepage": "https://github.com/WitherMite/testing-test#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
