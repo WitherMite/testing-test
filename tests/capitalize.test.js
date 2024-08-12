@@ -13,6 +13,7 @@ describe("Only accepts strings", () => {
     [undefined],
     [null],
     [NaN],
+    [true],
     [1],
     [0],
     [Infinity],
