@@ -11,6 +11,30 @@ describe("Shifts letters", () => {
   });
 });
 
+test("Default shift is three", () => {
+  expect(caesarCypher("abc")).toBe("def");
+});
+
+describe("Preserve capitials", () => {
+  test.each([
+    ["DEF", "ABC", 3],
+    ["OlSSv", "HeLLo", 7],
+    ["Huh", "Bob", 6],
+  ])("%s keeps capitals from %s", (cypher, string, shift) => {
+    expect(caesarCypher(string, shift)).toBe(cypher);
+  });
+});
+
+describe("Wrap shifts from a to z", () => {
+  test.each([
+    ["abc", -3, "xyz"],
+    ["hello", 22, "dahhk"],
+    ["nfn", -17, "wow"],
+  ])("Shifts %s %s letters to %s", (string, shift, cypher) => {
+    expect(caesarCypher(string, shift)).toBe(cypher);
+  });
+});
+
 describe("Only accepts strings", () => {
   test.each([
     [undefined],
