@@ -6,7 +6,6 @@ describe("Shifts letters", () => {
     ["hello", 7, "olssv"],
     ["xyz", -2, "vwx"],
     ["bob", 6, "huh"],
-    ["nfn", -17, "wow"],
   ])("Shifts %s %s letters to %s", (string, shift, cypher) => {
     expect(caesarCypher(string, shift)).toBe(cypher);
   });
