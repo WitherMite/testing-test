@@ -40,7 +40,7 @@ describe("Only accepts arrays", () => {
     ],
     ["hi"],
   ])("Errors when passed %p", (value) => {
-    expect(() => caesarCypher(value)).toThrow();
+    expect(() => analyzeArray(value)).toThrow();
   });
 });
 
