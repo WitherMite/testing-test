@@ -43,3 +43,15 @@ describe("Only accepts arrays", () => {
     expect(() => caesarCypher(value)).toThrow();
   });
 });
+
+describe("Only accepts arrays of numbers", () => {
+  test.each([
+    [[]],
+    [[NaN, 1, 2, 3]],
+    [["hello", "world"]],
+    [[null, true, false]],
+    [[[], {}, () => "foo"]],
+  ])("Errors when passed %p", (value) => {
+    expect(() => caesarCypher(value)).toThrow();
+  });
+});
