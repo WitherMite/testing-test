@@ -10,9 +10,8 @@ function shiftCharacter(charCode, shift) {
   const isUpperCase = charCode >= minUpperCode && charCode <= maxUpperCode;
   if (!(isUpperCase || isLowerCase)) return String.fromCharCode(charCode);
 
-  // simplify shifting, since it loops every 26 letters
-  shift = shift % 26;
-  let shiftCode = charCode + shift;
+  // mod to simplify shifting, since it loops every 26 letters
+  let shiftCode = charCode + (shift % 26);
 
   // handle non overlapping wrap cases
   if (shiftCode < minUpperCode) shiftCode += 26;
