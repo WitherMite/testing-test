@@ -1,7 +1,7 @@
 import analyzeArray from "../src/analyze-array.js";
 
 test("Outputs an object", () => {
-  const result = analyzeArray([]);
+  const result = analyzeArray([1]);
   const isObj = result && !Array.isArray(result) && typeof result === "object";
   expect(isObj).toBe(true);
 });
@@ -52,6 +52,6 @@ describe("Only accepts arrays of numbers", () => {
     [[null, true, false]],
     [[[], {}, () => "foo"]],
   ])("Errors when passed %p", (value) => {
-    expect(() => caesarCypher(value)).toThrow();
+    expect(() => analyzeArray(value)).toThrow();
   });
 });
