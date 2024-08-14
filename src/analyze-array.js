@@ -1,28 +1,18 @@
 export default function analyzeArray(arr) {
-  if (!Array.isArray(arr))
-    throw new Error("Argument is not valid array", { cause: arr });
   return {
     length: arr.length,
-    max: getMax(arr),
-    min: getMin(arr),
+    max: getExtreme(arr, (a, b) => a > b),
+    min: getExtreme(arr, (a, b) => a < b),
     average: getAverage(arr),
   };
 }
 
-function getMax(arr) {
-  let max = arr[0];
+function getExtreme(arr, boolCond) {
+  let extreme = arr[0];
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) max = arr[i];
+    if (boolCond(arr[i], extreme)) extreme = arr[i];
   }
-  return max;
-}
-
-function getMin(arr) {
-  let min = arr[0];
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] < min) min = arr[i];
-  }
-  return min;
+  return extreme;
 }
 
 function getAverage(arr) {
