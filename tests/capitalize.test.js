@@ -23,6 +23,7 @@ describe("Only accepts strings", () => {
         "hello-world";
       },
     ],
+    [[1, 2, 3]],
   ])("Errors when passed %p", (value) => {
     expect(() => capitalize(value)).toThrow();
   });
